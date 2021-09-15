@@ -1,5 +1,6 @@
-function fn(arr: Array<string>): boolean {
-  return arr.includes('a')
+export const foo = () => {
+  return 'Hello world!'
 }
-
-export default fn
+export const bar = () => {
+  return 'Hello world!'
+}

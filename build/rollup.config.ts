@@ -1,24 +1,21 @@
-import path from 'path'
 import typescript from '@rollup/plugin-typescript'
-
-const resolveFile = function (filePath) {
-  return path.join(__dirname, '..', filePath)
-}
+import babel from '@rollup/plugin-babel'
+import { resolve } from 'path'
 
 export default [
   {
-    input: resolveFile('src/index.ts'),
-    output: [
-      {
-        file: resolveFile('dist/index.esm.js'),
-        format: 'esm'
-      },
-      {
-        file: resolveFile('dist/index.cjs.js'),
-        format: 'cjs',
-        exports: 'named'
-      }
-    ],
-    plugins: [typescript()]
+    input: resolve(__dirname, '../src/index.ts'),
+    output: {
+      file: resolve(__dirname, '../dist/index.esm.js'),
+      format: 'esm'
+    },
+    plugins: [
+      typescript(),
+      babel({
+        babelHelpers: 'bundled',
+        extensions: ['.ts'],
+        exclude: 'node_modules/**'
+      })
+    ]
   }
 ]
