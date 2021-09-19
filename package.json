@@ -5,12 +5,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.umd.js",
+  "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "require": "./dist/index.cjs.js"
     }
   },
   "scripts": {
@@ -21,7 +21,11 @@
     "prepare": "husky install"
   },
   "author": "bordon",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subordon/rollup-template.git"
+  },
   "sideEffects": false,
   "devDependencies": {
     "@babel/core": "^7.15.5",
