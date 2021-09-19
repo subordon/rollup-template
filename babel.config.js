@@ -8,7 +8,6 @@ module.exports = {
         // 使用 loose 模式，避免产生副作用
         loose: true
       }
-    ],
-    ['@babel/preset-typescript']
+    ]
   ]
 }
